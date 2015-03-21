@@ -1,0 +1,59 @@
+{% extends "base.html"%}
+{% block screening %}
+<br>
+<div class="category pull-left"style="margin-top:30px;color:white;">{{result.Type}}</div>
+<center><div class="quizname">ILM An Islamic Quiz</div>
+<div class="roundname">(Screening Round)</div></center>
+{% if screening %}
+<center><div class="questionheading" style="color:green;">Question {{result.Position}}</div></center>
+{%else%}
+<center><div class="questionheading" style="color:green;">Answer & Explain  {{result.Position}}</div></center>
+{%endif%}
+<br>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="questionstyle bounceIn qheight"> {{result.Question|safe}}</div>
+	</div>
+</div>
+<br><br>
+<div class="row">
+	<div class="col-sm-6">
+		<div class="questionstyle bounceOut" id="op1">
+				<span class="pull-left">&nbsp;&nbsp;&nbsp;A.&nbsp;</span>{{result.Option1|safe}}
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="questionstyle bounceOut"id="op2">
+				<span class="pull-left ">&nbsp;&nbsp;&nbsp;B.&nbsp;</span>{{result.Option2|safe}}
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-sm-6">
+		<div class="questionstyle bounceOut"id="op3">
+				<span class="pull-left ">&nbsp;&nbsp;&nbsp;C.&nbsp;</span>{{result.Option3|safe}}
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="questionstyle bounceOut" id="op4">
+				<span class="pull-left ">&nbsp;&nbsp;&nbsp;D.&nbsp;</span>{{result.Option4|safe}}
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="modal custom fade mod-sign" id="explain" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog mod-sig"style="margin-top:20px;width:1100px;">
+    <div class="modal-content">
+      <div class="modal-body">
+      	<div class="explain-format">
+           {{result.Description}}
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+  </div>
+
+{% endblock %}
+

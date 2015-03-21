@@ -1,0 +1,200 @@
+@font-face { font-family: VarySharky !important; src: url('/home/mehrab/IslamicQuiz/Quiz/static/fonts/VarySharky-Regular.otf'); }
+
+/*@font-face {
+    font-family: 'BLKCHCRY';
+    src: url('/home/mehrab/IslamicQuiz/Quiz/static/fonts/BLKCHCRY.eot');
+    src: local('BLKCHCRY'), url('/home/mehrab/IslamicQuiz/Quiz/static/fonts/BLKCHCRY.woff') format('woff'), url('/home/mehrab/IslamicQuiz/Quiz/static/fonts/BLKCHCRY.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'mima4x4o';
+    src: url('/home/mehrab/IslamicQuiz/Quiz/static/fonts/mima4x4o.eot');
+    src: local('mima4x4o'), url('/home/mehrab/IslamicQuiz/Quiz/static/fonts/mima4x4o.woff') format('woff'), url('/home/mehrab/IslamicQuiz/Quiz/static/fonts/mima4x4o.ttf') format('truetype');
+}*/
+.timerstyle
+    {
+        width:150px;
+        height:150px;
+        border-radius:50%;
+        border:5px dotted black;
+        background: transparent;
+        position: relative;
+        color: darkred;
+        margin-right: 20px;
+    }
+    .clockstyle
+    {
+        font-size:100px; color:darkred;/* padding-top:-10px;*/
+        opacity: 0.8;
+    }
+    .questionstyle
+    {
+        height:auto;
+        width:auto;
+        background-color:#191970;
+        border-radius: 20px;
+        text-align: center;font-weight: bold;font-size: 35px;border:2px solid darkgreen;
+        color:white;
+        font-family: VarySharky;
+    }
+    .qheight{font-size: 40px;}
+    .questionheading{font-size: 60px;color: white;font-family: monospace Times;}
+    .category{font-weight: bolder;font-size: 40px;color: red;}
+    .quizname{font-family: VarySharky;font-weight: bolder;text-align: center;font-size: 60px;}
+    .roundname{font-weight: bold;text-align: center;font-size: 40px;}
+    .correct{background-color: green;}
+.animated { 
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    -webkit-animation-timing-function: linear; 
+    animation-timing-function: linear; 
+    animation-iteration-count:infinite; 
+    -webkit-animation-iteration-count:infinite; 
+} 
+
+@-webkit-keyframes tada { 
+    0% {-webkit-transform: scale(1);} 
+    10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);} 
+    30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);} 
+    40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);} 
+    100% {-webkit-transform: scale(1) rotate(0);} 
+} 
+@keyframes tada { 
+    0% {transform: scale(1);} 
+    10%, 20% {transform: scale(0.9) rotate(-3deg);} 
+    30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);} 
+    40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);} 
+    100% {transform: scale(1) rotate(0);} 
+} 
+.tada { 
+    -webkit-animation-name: tada; 
+    animation-name: tada; 
+}
+.customButton
+{
+    width: auto;
+    height: 30px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 6px;
+    border:1px solid #00bef2;
+    color:green;
+    background: transparent;
+    text-align: center;
+    font-family: cursive;
+}
+.arrow
+{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    /*background-image:url(/static/leftarrow.png);*/
+    /*background:transparent;*/
+}
+/*.easy{
+    padding-top: 60px;
+    font-size: 60px;
+    color:black;
+    font-weight: bold;
+    //font-family: 'BLKCHCRY';
+    margin-left: -40px;
+    text-align: center;
+    float: left;
+}*/
+/*.difficult{
+    font-size: 60px;
+    margin-top: 80px;
+    color:black;
+    font-weight: bold;
+    float:right;
+    margin-right: -60px;
+    text-align: center;
+}*/
+/*.medium{
+    margin-top: 130px;
+    color:black;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+    margin-left: -20px;
+}*/
+.explain-format{
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+.dua{
+    font-family: 'BLKCHCRY';
+    font-size: 80px;
+    color: white;
+}
+.beforeexplain
+{
+    font-family: 'BLKCHCRY';
+    font-size: 50px;
+    color: white;
+}
+
+@media(min-width:768px) {
+    .ruleshead{font-size: 40px;color:black;text-align: center;font-weight: bold;font-family: 'mima4x4o';}
+    .rules .col-sm-11{font-size: 30px;margin-top: 0px;}
+    .rules .col-sm-1{color:red;}
+    .easy {
+        padding-top: 47px;
+        font-size: 48px;
+        color: black;
+        font-weight: bold;
+        margin-left: -63px;
+        text-align: center;
+        float: left;
+        }
+        .difficult {
+    font-size: 41px;
+    margin-top: 36px;
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-right: -61px;
+    text-align: center;
+    }
+.medium {
+    margin-top: 75px;
+    color: black;
+    font-weight: bold;
+    font-size: 42px;
+    text-align: center;
+    margin-left: -27px;
+    }
+}
+
+@media(min-width:992px) {
+    .ruleshead{font-size: 50px;color:black;text-align: center;font-weight: bold;font-family: 'mima4x4o';}
+    .rules .col-sm-11{font-size: 40px;margin-top: 0px;}
+    .rules .col-sm-1{color:red;}
+    .easy {
+        padding-top: 96px;
+        font-size: 48px;
+        color: black;
+        font-weight: bold;
+        margin-left: 8px;
+        text-align: center;
+        float: left;
+        }
+        .difficult {
+    font-size: 44px;
+    margin-top: 109px;
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-right: -2px;
+    text-align: center;
+    }
+.medium {
+    margin-top: 145px;
+    color: black;
+    font-weight: bold;
+    font-size: 46px;
+    text-align: center;
+    margin-left: -3px;
+    }
+}

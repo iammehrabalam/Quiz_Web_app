@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+{% block home %}
+<!-- <center><div class=""><img src="static/b.png" ></div></center> -->
+<!-- <div class="pull-left"><img src="static/b.png" ></div> -->
+{% if p == 'home'%}
+<!-- <center><div style="font-family:'BLKCHCRY';font-size:150px;color:#eee;">Welcome to</div></center> -->
+<center><div style="font-family:'mima4x4o';font-size:200px;color:#eee; margin-top:-50px;">ILM</div></center>
+<center><div style="font-family:'BLKCHCRY';font-size:150px;color:#eee;">An Islamic Quiz</div></center>
+{%else%}
+ <div class="col-sm-5">
+ <center>
+ 	<div class="dua">
+ 		Keep <br>Calm <br>And Pray to <br><span style="font-family:mima4x4o;font-size:80px;">Allah</span><br> for Next Round
+ 	</div>
+ </center>
+ </div>
+ <div class="col-sm-offset-1 col-sm-5">
+ <center>
+ 	<div class="beforeexplain">
+ 		<span>We will be right back with Answer</span>
+ 	</div>
+ </center>
+ </div>
+{%endif%}
+
+{% endblock %}
+

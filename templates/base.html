@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		home
+	</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+	<style type="text/css">
+	/*@font-face { font-family: VarySharky !important; src: url('{% static "fonts/VarySharky-Regular.otf" %}'); }*/
+	@font-face {
+    font-family: 'BLKCHCRY';
+    src: url('{% static "fonts/BLKCHCRY.eot" %}');
+    src: local('BLKCHCRY'), url('{% static "fonts/BLKCHCRY.woff" %}') format('woff'), url('{% static  "fonts/BLKCHCRY.ttf" %}') format('truetype');
+	}
+	@font-face {
+	    font-family: 'mima4x4o';
+	    src: url('{% static "fonts/mima4x4o.eot" %}');
+	    src: local('mima4x4o'), url('{% static "fonts/mima4x4o.woff" %} ') format('woff'), url('{% static "fonts/mima4x4o.ttf" %} ') format('truetype');
+	    /*background-position: */
+	}
+	body
+    {
+    	{%if p == 'screening'%}
+    		background-image: url({% static "backimg5.jpg"%}) ;
+    	{% elif p == 'rules' %}
+    		background-image: url({% static "rules3.jpg"%}) ;
+    	{% elif p == 'home' %}
+    		background-image: url({% static "homepic.jpg"%}) ;
+    		background-position:fixed;
+    	{% elif p == 'marking' %}
+    		background-image: url({% static "mark.jpg"%}) ;
+    		background-position:top left;
+    	{% elif p == 'keepcalm' %}
+    		background-image: url({% static "dua.png"%}) ;
+    	{%endif%}
+        background-repeat: no-repeat;
+        background-size: cover !important;
+        width: 100%;
+    }
+    .rules{
+    	font-family:'BLKCHCRY';
+    }
+    /*.ruleshead{font-size: 60px;color:black;text-align: center;font-weight: bold;font-family: 'mima4x4o';}*/
+    /*.rules .col-sm-11{font-size: 43px;margin-top: 0px;}
+    .rules .col-sm-1{color:red;}*/
+	</style>
+</head>
+<body >
+<br>
+{% if screening == True%}	
+<div id="animated-example" class="animated tada timerstyle pull-right">
+	<center><span id="timer" class="clockstyle"><b>{{result.Displaytime}}<b></span></center>
+</div>
+{% endif %}
+<div class="container">
+{% block home %}{% endblock %}
+{% block screening%}{% endblock %}
+{% block instruction%}{% endblock %}
+{% block rules%}{% endblock %}
+{% block welcome%}{% endblock %}
+{% block marking%}{% endblock %}
+<center>
+	{% if pre_v%}
+	<a href="{{pre_v}}"><img src="/static/leftarrow.png" class="arrow"></a>
+	{%else%}
+	<a href="#"><img src="/static/leftarrow.png" class="arrow"></a>
+	{%endif%}
+	{% if screening == False %}
+	<button class="customButton" id="ans">Answer</button>
+	<a href="#explain" role="button"  data-toggle="modal">
+		<button class="customButton" >Explain</button>
+	</a>
+	{% endif %}
+	<a href="{{next_url}}"><img src="/static/rightarrow.png" class="arrow"></a>
+</center>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+
+	{% if screening %}
+	myVar = setInterval(alertFunc, 1000);
+	function alertFunc() 	
+		{
+			var time = $('#timer').text();
+			if(parseInt(time)-1 == -1)
+			{
+				window.location.href="{{next_url}}";
+			}
+			if(parseInt(time)==10)
+			{
+				var aud = new Audio();
+				aud.src = '{% static "media/audio/ticktock.wav"%}';
+				aud.play();
+				aud.loop=true;
+			}
+			$('#timer').text(parseInt(time)-1);
+		}
+	{% endif %}
+	{%if result.Answer%}
+	var op='#op{{result.Answer}}'
+	$('#ans').click(function(){
+		$(op).addClass('correct');
+		$(op).removeClass('bounceOut');
+		$(op).addClass('bounceIn');
+	});
+	{% endif %}
+	});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+
+{% block marking%}
+	<div class="ruleshead" style="color:white;font-size:60px !important;">MARKING SCHEMA</div>
+	<div class="row">
+	<div class="col-sm-4">
+		<div class="easy">
+			<span class="rules">Question 1-10 </span>
+			<br> +2 <span class="glyphicon glyphicon-ok " aria-hidden="true"style="color:green;"></span>
+			<br> 0 <span class="glyphicon glyphicon-remove" aria-hidden="true" style="color:red;"></span>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="medium">
+				<span class="rules">Question 11-20 </span>
+				<br> +3 <span class="glyphicon glyphicon-ok " aria-hidden="true"style="color:green;"></span>
+				<br> -1 <span class="glyphicon glyphicon-remove" aria-hidden="true" style="color:red;"></span>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="difficult">
+			<span class="rules">Question 21-30 </span>
+			<br> +5 <span class="glyphicon glyphicon-ok " aria-hidden="true"style="color:green;"></span>
+			<br> -2 <span class="glyphicon glyphicon-remove" aria-hidden="true" style="color:red;"></span>
+		</div>
+	</div>
+	</div>
+	
+	
+
+{% endblock %}
